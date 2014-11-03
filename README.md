@@ -1,5 +1,8 @@
 # querystringify
 
+[![Build Status](https://travis-ci.org/unshiftio/querystringify.svg?branch=master)](https://travis-ci.org/unshiftio/querystringify)
+[![Coverage Status](https://coveralls.io/repos/unshiftio/querystringify/badge.png)](https://coveralls.io/r/unshiftio/querystringify)
+
 A somewhat JSON compatible interface for query string parsing. This query string
 parser is dumb, don't expect to much from it as it only wants to parse simple
 query strings. If you want to parse complex, multi level and deeply nested
