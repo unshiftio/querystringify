@@ -1,6 +1,7 @@
 # querystringify
 
 [![Build Status](https://travis-ci.org/unshiftio/querystringify.svg?branch=master)](https://travis-ci.org/unshiftio/querystringify)
+[![NPM version](https://badge.fury.io/js/querystringify.svg)](http://badge.fury.io/js/querystringify)
 [![Coverage Status](https://coveralls.io/repos/unshiftio/querystringify/badge.png)](https://coveralls.io/r/unshiftio/querystringify)
 
 A somewhat JSON compatible interface for query string parsing. This query string
