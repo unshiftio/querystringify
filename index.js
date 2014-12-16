@@ -1,5 +1,7 @@
 'use strict';
 
+var has = Object.prototype.hasOwnProperty;
+
 /**
  * Simple query string parser.
  *
@@ -44,7 +46,7 @@ function querystringify(obj, prefix) {
   if ('string' !== typeof prefix) prefix = '?';
 
   for (var key in obj) {
-    if (obj.hasOwnProperty(key)) {
+    if (has.call(obj, key)) {
       pairs.push(encodeURIComponent(key) +'='+ encodeURIComponent(obj[key]));
     }
   }

@@ -25,6 +25,13 @@ describe('querystringify', function () {
     it('can prefix with custom things', function () {
       assume(qs.stringify(obj, '&')).equals('&foo=bar&bar=foo');
     });
+
+    it('works with nulled objects', function () {
+      var obj = Object.create(null);
+
+      obj.foo='bar';
+      assume(qs.stringify(obj)).equals('foo=bar');
+    });
   });
 
   describe('#parse', function () {
