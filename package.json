@@ -1,6 +1,6 @@
 {
   "name": "querystringify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Querystringify - Small, simple but powerful query string parser.",
   "main": "index.js",
   "scripts": {
