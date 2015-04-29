@@ -26,6 +26,11 @@ describe('querystringify', function () {
       assume(qs.stringify(obj, '&')).equals('&foo=bar&bar=foo');
     });
 
+    it('doesnt prefix empty query strings', function () {
+      assume(qs.stringify({}, true)).equals('');
+      assume(qs.stringify({})).equals('');
+    });
+
     it('works with nulled objects', function () {
       var obj = Object.create(null);
 

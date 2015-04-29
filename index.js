@@ -51,7 +51,7 @@ function querystringify(obj, prefix) {
     }
   }
 
-  return prefix + pairs.join('&');
+  return pairs.length ? prefix + pairs.join('&') : '';
 }
 
 //
