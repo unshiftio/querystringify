@@ -4,10 +4,10 @@
   "description": "Querystringify - Small, simple but powerful query string parser.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter spec --ui bdd test.js",
-    "watch": "mocha --watch --reporter spec --ui bdd test.js",
-    "coverage": "istanbul cover ./node_modules/.bin/_mocha -- --reporter spec --ui bdd test.js",
-    "test-travis": "istanbul cover node_modules/.bin/_mocha --report lcovonly -- --reporter spec --ui bdd test.js"
+    "test": "mocha test.js",
+    "watch": "mocha --watch test.js",
+    "coverage": "istanbul cover _mocha -- test.js",
+    "test-travis": "istanbul cover _mocha --report lcovonly -- test.js"
   },
   "repository": {
     "type": "git",
@@ -31,9 +31,9 @@
   },
   "homepage": "https://github.com/unshiftio/querystringify",
   "devDependencies": {
-    "assume": "1.2.x",
-    "istanbul": "0.3.x",
-    "mocha": "2.2.x",
-    "pre-commit": "1.0.x"
+    "assume": "1.3.x",
+    "istanbul": "0.4.x",
+    "mocha": "2.4.x",
+    "pre-commit": "1.1.x"
   }
 }
