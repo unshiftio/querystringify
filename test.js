@@ -58,5 +58,13 @@ describe('querystringify', function () {
       assume(obj.foo).equals('bar');
       assume(obj.shizzle).equals('mynizzle');
     });
+
+    it('works with querystring parameters without values', function () {
+      var obj = qs.parse('?foo&bar=baz');
+
+      assume(obj).is.a('object');
+      assume(obj.foo).equals(null);
+      assume(obj.bar).equals('baz');
+    })
   });
 });
