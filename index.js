@@ -10,7 +10,7 @@ var has = Object.prototype.hasOwnProperty;
  * @api public
  */
 function querystring(query) {
-  var parser = /([^=?&]+)=([^&]*)/g
+  var parser = /([^=?&]+)=?([^&]*)?/g
     , result = {}
     , part;
 
@@ -21,7 +21,7 @@ function querystring(query) {
   //
   for (;
     part = parser.exec(query);
-    result[decodeURIComponent(part[1])] = decodeURIComponent(part[2])
+    result[decodeURIComponent(part[1])] = part[2] ? decodeURIComponent(part[2]) : null
   );
 
   return result;
