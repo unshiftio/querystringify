@@ -32,7 +32,7 @@ describe('querystringify', function () {
     });
 
     it('works with object keys with null values', function () {
-      assume(qs.stringify({ foo: null })).equals('foo')
+      assume(qs.stringify({ foo: '' })).equals('foo=')
     })
 
     it('works with nulled objects', function () {
@@ -64,11 +64,12 @@ describe('querystringify', function () {
     });
 
     it('works with querystring parameters without values', function () {
-      var obj = qs.parse('?foo&bar=baz');
+      var obj = qs.parse('?foo&bar=&shizzle=mynizzle');
 
       assume(obj).is.a('object');
-      assume(obj.foo).equals(null);
-      assume(obj.bar).equals('baz');
+      assume(obj.foo).equals('');
+      assume(obj.bar).equals('');
+      assume(obj.shizzle).equals('mynizzle');
     })
   });
 });

@@ -10,7 +10,7 @@ var has = Object.prototype.hasOwnProperty;
  * @api public
  */
 function querystring(query) {
-  var parser = /([^=?&]+)=?([^&]*)?/g
+  var parser = /([^=?&]+)=?([^&]*)/g
     , result = {}
     , part;
 
@@ -21,7 +21,7 @@ function querystring(query) {
   //
   for (;
     part = parser.exec(query);
-    result[decodeURIComponent(part[1])] = part[2] ? decodeURIComponent(part[2]) : null
+    result[decodeURIComponent(part[1])] = decodeURIComponent(part[2])
   );
 
   return result;
@@ -48,8 +48,7 @@ function querystringify(obj, prefix) {
 
   for (var key in obj) {
     if (has.call(obj, key)) {
-      value = obj[key] ? '=' + encodeURIComponent(obj[key]) : ''
-      pairs.push(encodeURIComponent(key) + value);
+      pairs.push(encodeURIComponent(key) +'='+ encodeURIComponent(obj[key]))
     }
   }
 
