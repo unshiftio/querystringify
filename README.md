@@ -51,6 +51,7 @@ simply supply a string with the prefix value as second argument:
 qs.stringify({ foo: bar });       // foo=bar
 qs.stringify({ foo: bar }, true); // ?foo=bar
 qs.stringify({ foo: bar }, '&');  // &foo=bar
+qs.stringify({ foo: null }, '&'); // &foo
 ```
 
 ## License
