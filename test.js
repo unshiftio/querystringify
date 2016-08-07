@@ -31,6 +31,10 @@ describe('querystringify', function () {
       assume(qs.stringify({})).equals('');
     });
 
+    it('works with object keys with null values', function () {
+      assume(qs.stringify({ foo: null })).equals('foo')
+    })
+
     it('works with nulled objects', function () {
       var obj = Object.create(null);
 
