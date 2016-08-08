@@ -31,6 +31,10 @@ describe('querystringify', function () {
       assume(qs.stringify({})).equals('');
     });
 
+    it('works with object keys with empty string values', function () {
+      assume(qs.stringify({ foo: '' })).equals('foo=');
+    })
+
     it('works with nulled objects', function () {
       var obj = Object.create(null);
 
@@ -58,5 +62,14 @@ describe('querystringify', function () {
       assume(obj.foo).equals('bar');
       assume(obj.shizzle).equals('mynizzle');
     });
+
+    it('works with querystring parameters without values', function () {
+      var obj = qs.parse('?foo&bar=&shizzle=mynizzle');
+
+      assume(obj).is.a('object');
+      assume(obj.foo).equals('');
+      assume(obj.bar).equals('');
+      assume(obj.shizzle).equals('mynizzle');
+    })
   });
 });

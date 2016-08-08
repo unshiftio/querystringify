@@ -29,14 +29,16 @@ var qs = require('querystringify');
 
 ### qs.parse()
 
-The parse method transforms a given query string in to an object. It does not
-care if your query string if prefixed with a `?` or not. It just extracts the
-parts between the `=` and `&`:
+The parse method transforms a given query string in to an object. Parameters
+without values are set to empty strings. It does not care if your query string
+is prefixed with a `?` or not. It just extracts the parts between the `=` and
+`&`:
 
 ```js
 qs.parse('?foo=bar');         // { foo: 'bar' }
 qs.parse('foo=bar');          // { foo: 'bar' }
 qs.parse('foo=bar&bar=foo');  // { foo: 'bar', bar: 'foo' }
+qs.parse('foo&bar=foo');      // { foo: '', bar: 'foo' }
 ```
 
 ### qs.stringify()
@@ -50,6 +52,7 @@ simply supply a string with the prefix value as second argument:
 qs.stringify({ foo: bar });       // foo=bar
 qs.stringify({ foo: bar }, true); // ?foo=bar
 qs.stringify({ foo: bar }, '&');  // &foo=bar
+qs.stringify({ foo: '' }, '&');   // &foo=
 ```
 
 ## License
