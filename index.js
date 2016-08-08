@@ -38,8 +38,7 @@ function querystring(query) {
 function querystringify(obj, prefix) {
   prefix = prefix || '';
 
-  var pairs = []
-    , value;
+  var pairs = [];
 
   //
   // Optionally prefix with a '?' if needed
@@ -48,7 +47,7 @@ function querystringify(obj, prefix) {
 
   for (var key in obj) {
     if (has.call(obj, key)) {
-      pairs.push(encodeURIComponent(key) +'='+ encodeURIComponent(obj[key]))
+      pairs.push(encodeURIComponent(key) +'='+ encodeURIComponent(obj[key]));
     }
   }
 
