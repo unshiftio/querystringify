@@ -33,7 +33,7 @@ describe('querystringify', function () {
 
     it('works with object keys with empty string values', function () {
       assume(qs.stringify({ foo: '' })).equals('foo=');
-    })
+    });
 
     it('works with nulled objects', function () {
       var obj = Object.create(null);
@@ -70,6 +70,18 @@ describe('querystringify', function () {
       assume(obj.foo).equals('');
       assume(obj.bar).equals('');
       assume(obj.shizzle).equals('mynizzle');
-    })
+    });
+
+    it('decodes plus signs', function () {
+      var obj = qs.parse('foo+bar=baz+qux');
+
+      assume(obj).is.a('object');
+      assume(obj['foo bar']).equals('baz qux');
+
+      obj = qs.parse('foo+bar=baz%2Bqux');
+
+      assume(obj).is.a('object');
+      assume(obj['foo bar']).equals('baz+qux');
+    });
   });
 });
