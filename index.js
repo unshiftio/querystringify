@@ -35,12 +35,12 @@ function querystring(query) {
     tk1 = decode(part[1])
     tk2 = decode(part[2])
     //checking if we already have the key in result object && it is not an array
-    if( has.call(result, tk1) && !_.isArray(result[tk1]) ) {
+    if( has.call(result, tk1) && !Array.isArray(result[tk1]) ) {
         var temp = result[tk1]; 
         result[tk1] = [];
         result[tk1].push(temp)
         result[tk1].push(tk2)
-    } else if(_.isArray(result[tk1])){ //if the key is an array, push the new value
+    } else if(Array.isArray(result[tk1])){ //if the key is an array, push the new value
         result[tk1].push(tk2)
     } else { //assign value
         result[tk1] = tk2;
