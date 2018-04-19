@@ -30,10 +30,22 @@ function querystring(query) {
   // the lastIndex property so we can continue executing this loop until we've
   // parsed all results.
   //
-  for (;
-    part = parser.exec(query);
-    result[decode(part[1])] = decode(part[2])
-  );
+  while(part = parser.exec(query)) { 
+    var tk1, tk2;
+    tk1 = decode(part[1])
+    tk2 = decode(part[2])
+    //checking if we already have the key in result object && it is not an array
+    if( has.call(result, tk1) && !Array.isArray(result[tk1]) ) {
+        var temp = result[tk1]; 
+        result[tk1] = [];
+        result[tk1].push(temp)
+        result[tk1].push(tk2)
+    } else if(Array.isArray(result[tk1])){ //if the key is an array, push the new value
+        result[tk1].push(tk2)
+    } else { //assign value
+        result[tk1] = tk2;
+    }
+  }
 
   return result;
 }
