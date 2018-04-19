@@ -63,6 +63,14 @@ describe('querystringify', function () {
       assume(obj.shizzle).equals('mynizzle');
     });
 
+    it('does not overide prototypes', function () {
+      var obj = qs.parse('?toString&__proto__=lol');
+
+      assume(obj).is.a('object');
+      assume(obj.toString).is.a('function');
+      assume(obj.__proto__).does.not.equals('lol');
+    });
+
     it('works with querystring parameters without values', function () {
       var obj = qs.parse('?foo&bar=&shizzle=mynizzle');
 
