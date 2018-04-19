@@ -30,8 +30,7 @@ function querystring(query) {
   // the lastIndex property so we can continue executing this loop until we've
   // parsed all results.
   //
-  for (;
-    part = parser.exec(query);
+  while(part = parser.exec(query)) { 
     var tk1, tk2;
     tk1 = decode(part[1])
     tk2 = decode(part[2])
@@ -46,7 +45,7 @@ function querystring(query) {
     } else { //assign value
         result[tk1] = tk2;
     }
-  );
+  }
 
   return result;
 }
