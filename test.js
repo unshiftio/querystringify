@@ -62,6 +62,14 @@ describe('querystringify', function () {
       assume(obj.foo).equals('bar');
       assume(obj.shizzle).equals('mynizzle');
     });
+    
+    it('will also work if querystring is having arrays', function () {
+      var obj = qs.parse('foo=bar&foo=mynizzle');
+
+      assume(obj).is.a('object');
+      assume(obj.foo[0]).equals('bar');
+      assume(obj.foo[1]).equals('mynizzle');
+    });
 
     it('works with querystring parameters without values', function () {
       var obj = qs.parse('?foo&bar=&shizzle=mynizzle');
