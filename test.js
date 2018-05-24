@@ -35,6 +35,14 @@ describe('querystringify', function () {
       assume(qs.stringify({ foo: '' })).equals('foo=');
     });
 
+    it('should put empty string for undefined', function () {
+      assume(qs.stringify({ foo: undefined })).equals('foo=');
+    });
+
+    it('should put empty string for null', function () {
+      assume(qs.stringify({ foo: null })).equals('foo=');
+    });
+
     it('works with nulled objects', function () {
       var obj = Object.create(null);
 

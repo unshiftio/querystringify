@@ -61,11 +61,19 @@ function querystringify(obj, prefix) {
 
   for (var key in obj) {
     if (has.call(obj, key)) {
-      pairs.push(encodeURIComponent(key) +'='+ encodeURIComponent(obj[key]));
+      pairs.push(encode(key) +'='+ encode(obj[key]));
     }
   }
 
   return pairs.length ? prefix + pairs.join('&') : '';
+}
+
+function encode(value) {
+  if (typeof value === 'undefined' || value === null) {
+    return '';
+  }
+
+  return encodeURIComponent(value);
 }
 
 //
