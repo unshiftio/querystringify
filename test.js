@@ -1,7 +1,8 @@
 describe('querystringify', function () {
   'use strict';
 
-  var assume = require('assume')
+  var querystring = require('querystring')
+    , assume = require('assume')
     , qs = require('./');
 
   describe('#stringify', function () {
@@ -40,6 +41,18 @@ describe('querystringify', function () {
 
       obj.foo='bar';
       assume(qs.stringify(obj)).equals('foo=bar');
+    });
+
+    it('transforms `undefined` into nothing', function () {
+      assume(qs.stringify({ foo: undefined })).equals('foo=');
+    });
+
+    it('transforms `NaN` into nothing', function () {
+      assume(qs.stringify({ foo: NaN })).equals('foo=');
+    });
+
+    it('transforms `null` into nothing', function () {
+      assume(qs.stringify({ foo: null })).equals('foo=');
     });
   });
 
