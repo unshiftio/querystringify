@@ -104,5 +104,18 @@ describe('querystringify', function () {
       assume(obj).is.a('object');
       assume(obj['foo bar']).equals('baz+qux');
     });
+
+    it('does not throw on invalid input', function () {
+      var obj = qs.parse('?%&');
+
+      assume(obj).is.a('object');
+    });
+
+    it('does not include invalid output', function () {
+      var obj = qs.parse('?%&');
+
+      assume(obj).is.a('object');
+      assume(obj).is.length(0);
+    });
   });
 });
