@@ -93,6 +93,12 @@ describe('querystringify', function () {
       assume(obj.shizzle).equals('mynizzle');
     });
 
+    it('first value wins', function () {
+      var obj = qs.parse('foo=1&foo=2');
+
+      assume(obj.foo).equals('1');
+    });
+
     it('decodes plus signs', function () {
       var obj = qs.parse('foo+bar=baz+qux');
 
