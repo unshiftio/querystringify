@@ -6,8 +6,8 @@ var has = Object.prototype.hasOwnProperty
 /**
  * Decode a URI encoded string.
  *
- * @param {String} input The URI encoded string.
- * @returns {String|Null} The decoded string.
+ * @param {string} input The URI encoded string.
+ * @returns {string|null} The decoded string.
  * @api private
  */
 function decode(input) {
@@ -21,8 +21,8 @@ function decode(input) {
 /**
  * Attempts to encode a given input.
  *
- * @param {String} input The string that needs to be encoded.
- * @returns {String|Null} The encoded string.
+ * @param {string} input The string that needs to be encoded.
+ * @returns {string|null} The encoded string.
  * @api private
  */
 function encode(input) {
@@ -36,7 +36,7 @@ function encode(input) {
 /**
  * Simple query string parser.
  *
- * @param {String} query The query string that needs to be parsed.
+ * @param {string} query The query string that needs to be parsed.
  * @returns {Object}
  * @api public
  */
@@ -68,8 +68,8 @@ function querystring(query) {
  * Transform a query string to an object.
  *
  * @param {Object} obj Object that should be transformed.
- * @param {String} prefix Optional prefix.
- * @returns {String}
+ * @param {string} [prefix] Optional prefix.
+ * @returns {string}
  * @api public
  */
 function querystringify(obj, prefix) {
