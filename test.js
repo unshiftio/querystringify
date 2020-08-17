@@ -76,6 +76,14 @@ describe('querystringify', function () {
       assume(obj.shizzle).equals('mynizzle');
     });
 
+    it('will also work if querystring is prefixed with #', function () {
+      var obj = qs.parse('#foo=bar&shizzle=mynizzle');
+
+      assume(obj).is.a('object');
+      assume(obj.foo).equals('bar');
+      assume(obj.shizzle).equals('mynizzle');
+    });
+
     it('does not overide prototypes', function () {
       var obj = qs.parse('?toString&__proto__=lol');
 
