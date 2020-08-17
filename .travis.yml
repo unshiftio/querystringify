@@ -5,10 +5,8 @@ node_js:
   - "6"
   - "8"
   - "9"
-script:
-  - "npm run test-travis"
-after_script:
-  - "npm install coveralls@2 && cat coverage/lcov.info | coveralls"
+after_success:
+  - nyc report --reporter=text-lcov | coveralls
 matrix:
   fast_finish: true
 notifications:
