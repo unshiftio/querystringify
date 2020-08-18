@@ -4,7 +4,7 @@ node_js:
   - "12"
   - "14"
 after_success:
-  - nyc report --reporter=text-lcov | coveralls
+  - c8 report --reporter=text-lcov | coveralls
 matrix:
   fast_finish: true
 notifications:
