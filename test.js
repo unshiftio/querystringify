@@ -1,8 +1,7 @@
 describe('querystringify', function () {
   'use strict';
 
-  var querystring = require('querystring')
-    , assume = require('assume')
+  var assume = require('assume')
     , qs = require('./');
 
   describe('#stringify', function () {
