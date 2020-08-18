@@ -53,6 +53,12 @@ describe('querystringify', function () {
     it('transforms `null` into nothing', function () {
       assume(qs.stringify({ foo: null })).equals('foo=');
     });
+
+    if (typeof Symbol !== 'undefined') {
+      it('does not throw on invalid input', function () {
+        assume(qs.stringify({ foo: Symbol('foo') })).equals('');
+      });
+    }
   });
 
   describe('#parse', function () {
