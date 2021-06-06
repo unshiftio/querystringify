@@ -4,7 +4,7 @@
   "description": "Querystringify - Small, simple but powerful query string parser.",
   "main": "index.js",
   "scripts": {
-    "test": "c8 --reporter=html --reporter=text mocha test.js",
+    "test": "c8 --reporter=lcov --reporter=text mocha test.js",
     "watch": "mocha --watch test.js"
   },
   "repository": {
