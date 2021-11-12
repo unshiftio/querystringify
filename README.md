@@ -1,6 +1,6 @@
 # querystringify
 
-[![Version npm](https://img.shields.io/npm/v/querystringify.svg?style=flat-square)](https://www.npmjs.com/package/querystringify)[![Build Status](https://img.shields.io/github/workflow/status/unshiftio/querystringify/CI/master?label=CI&style=flat-square)](https://github.com/unshiftio/querystringify/actions?query=workflow%3ACI+branch%3Amaster)[![Dependencies](https://img.shields.io/david/unshiftio/querystringify.svg?style=flat-square)](https://david-dm.org/unshiftio/querystringify)[![Coverage Status](https://img.shields.io/coveralls/unshiftio/querystringify/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/querystringify?branch=master)
+[![Version npm](https://img.shields.io/npm/v/querystringify.svg?style=flat-square)](https://www.npmjs.com/package/querystringify)[![Build Status](https://img.shields.io/github/workflow/status/unshiftio/querystringify/CI/master?label=CI&style=flat-square)](https://github.com/unshiftio/querystringify/actions?query=workflow%3ACI+branch%3Amaster)[![Coverage Status](https://img.shields.io/coveralls/unshiftio/querystringify/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/querystringify?branch=master)
 
 A somewhat JSON compatible interface for query string parsing. This query string
 parser is dumb, don't expect to much from it as it only wants to parse simple
