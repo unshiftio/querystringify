@@ -2,15 +2,16 @@
 
 [![Version npm](https://img.shields.io/npm/v/querystringify.svg?style=flat-square)](https://www.npmjs.com/package/querystringify)[![Build Status](https://img.shields.io/github/workflow/status/unshiftio/querystringify/CI/master?label=CI&style=flat-square)](https://github.com/unshiftio/querystringify/actions?query=workflow%3ACI+branch%3Amaster)[![Coverage Status](https://img.shields.io/coveralls/unshiftio/querystringify/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/querystringify?branch=master)
 
-First off, see if the built-in [URLSearchParams](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
+First off, see if the built-in
+[`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
 is suitable for your needs.
 
-Development of this module started in 2014, when `URLSearchParams` wasn't available.
-It provides a somewhat JSON-compatible interface for query string parsing. This query string
-parser is dumb, don't expect to much from it as it only wants to parse simple
-query strings. If you want to parse complex, multi level and deeply nested
-query strings then you should rethink your approach, due to the lack of spec
-and numerous edge cases.
+Development of this module started in 2014, when `URLSearchParams` wasn't
+available. The module provides a somewhat JSON-compatible interface for query
+string parsing. This query string parser is dumb, don't expect to much from it
+as it only wants to parse simple query strings. If you want to parse complex,
+multi level and deeply nested query strings then you should rethink your
+approach, due to the lack of spec and numerous edge cases.
 
 ## Installation
 
