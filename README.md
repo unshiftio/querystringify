@@ -9,8 +9,8 @@ Development of this module started in 2014, when `URLSearchParams` wasn't availa
 It provides a somewhat JSON-compatible interface for query string parsing. This query string
 parser is dumb, don't expect to much from it as it only wants to parse simple
 query strings. If you want to parse complex, multi level and deeply nested
-query strings then you should rethink your approach, due to the [lack of spec
-and numerous edge cases](https://github.com/sindresorhus/query-string#nesting).
+query strings then you should rethink your approach, due to the lack of spec
+and numerous edge cases.
 
 ## Installation
 
