@@ -1,6 +1,6 @@
 # querystringify
 
-[![Version npm](https://img.shields.io/npm/v/querystringify.svg?style=flat-square)](https://www.npmjs.com/package/querystringify)[![Build Status](https://img.shields.io/github/workflow/status/unshiftio/querystringify/CI/master?label=CI&style=flat-square)](https://github.com/unshiftio/querystringify/actions?query=workflow%3ACI+branch%3Amaster)[![Coverage Status](https://img.shields.io/coveralls/unshiftio/querystringify/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/querystringify?branch=master)
+[![Version npm](https://img.shields.io/npm/v/querystringify.svg?style=flat-square)](https://www.npmjs.com/package/querystringify)[![CI](https://img.shields.io/github/actions/workflow/status/unshiftio/querystringify/ci.yml?branch=master&label=CI&style=flat-square)](https://github.com/unshiftio/querystringify/actions?query=workflow%3ACI+branch%3Amaster)[![Coverage Status](https://img.shields.io/coveralls/unshiftio/querystringify/master.svg?style=flat-square)](https://coveralls.io/r/unshiftio/querystringify?branch=master)
 
 First off, see if the built-in
 [`URLSearchParams`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams)
