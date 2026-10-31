@@ -106,6 +106,34 @@ describe('querystringify', function () {
       assume(obj.shizzle).equals('mynizzle');
     });
 
+    it('round-trips an empty parameter name', function () {
+      var obj = { '': 'value with spaces', foo: 'bar' };
+
+      assume(qs.parse(qs.stringify(obj))).deep.equals(obj);
+    });
+
+    it('parses empty names before, between and after named parameters', function () {
+      ['=value&foo=bar', 'foo=bar&=value', 'foo=bar&=value&baz=qux'].forEach(function (query) {
+        assume(qs.parse(query)['']).equals('value');
+        assume(qs.parse(query).foo).equals('bar');
+      });
+    });
+
+    it('handles prefixes and empty values for empty names', function () {
+      ['=', '?=', '#='].forEach(function (query) {
+        assume(qs.parse(query)).deep.equals({ '': '' });
+      });
+    });
+
+    it('keeps the first value for an empty name', function () {
+      assume(qs.parse('=first&=second')).deep.equals({ '': 'first' });
+    });
+
+    it('ignores empty separators and invalid empty-name values', function () {
+      assume(qs.parse('?&&#')).deep.equals({});
+      assume(qs.parse('=%&foo=bar')).deep.equals({ foo: 'bar' });
+    });
+
     it('first value wins', function () {
       var obj = qs.parse('foo=1&foo=2');
 
